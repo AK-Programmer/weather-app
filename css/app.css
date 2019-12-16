@@ -1,0 +1,49 @@
+.bg-gradient-chill {
+  background: linear-gradient(135deg, #09e485 0%, #0291e3 100%);
+}
+
+.bg-gradient-warm {
+  background: linear-gradient(135deg, #F2CD48 0%, #FD803F 100%);
+}
+
+.bg-gradient-hot {
+  background: linear-gradient(135deg, #F9445A 0%, #FD803F 100%);
+}
+
+.bg-gradient-cold {
+  background: linear-gradient(135deg, #96d9ff 0%, #145fff 100%);
+}
+
+.main-font {
+  font-family: "Open Sans", sans-serif;
+}
+
+.search-bar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  font-size: 24pt;
+  font-weight: 300;
+  text-align: center;
+  border: none;
+  outline-width: 0px;
+}
+
+.search-bar-div {
+  width: 70%;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  margin: 0 auto;
+  color: black;
+  font-size: 50px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=app.css.map */

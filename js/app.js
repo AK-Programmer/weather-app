@@ -17,47 +17,47 @@ function getWeatherData (cityName) {
                 console.log("404 Error");
                 document.getElementById("temp").innerHTML = ""; 
                 document.getElementById("feels-like").innerHTML = ""; 
-                document.getElementById("background").className = "bg-gradient-chill main-font";
+                document.getElementById("weather").innerHTML = "";
 
             } else {
                 console.log(data);
 
                 document.getElementById("city").innerHTML = "The Weather In: " + data.name; 
                 document.getElementById("temp").innerHTML = "The Temperature is " + (data.main.temp - 273.15).toFixed(1) + "ºC"; 
-                document.getElementById("feels-like").innerHTML = "The Temperature is " + (data.main.feels_like - 273.15).toFixed(1) + "ºC"; 
+                document.getElementById("feels-like").innerHTML = "It feels like " + (data.main.feels_like - 273.15).toFixed(1) + "ºC outside"; 
                 
 
-                if (data.weather.description == "clear sky") {
+                if (data.weather[0].description == "clear sky") {
                     document.getElementById("weather").innerHTML = "The sky is clear ";
 
                 //Clouds
-                } else if (data.weather.description == "few clouds") {
+                } else if (data.weather[0].description == "few clouds") {
                     document.getElementById("weather").innerHTML = "It's slightly cloudy outside ";
-                } else if (data.weather.description == "scattered clouds") {
+                } else if (data.weather[0].description == "scattered clouds") {
                     document.getElementById("weather").innerHTML = "There are scattered clouds outside ";
-                } else if (data.weather.description == "broken clouds") {
-                    document.getElementById("weather").innerHTML = "There are scattered clouds outside ";
-                } else if (data.weather.description == "overcast clouds") {
+                } else if (data.weather[0].description == "broken clouds") {
+                    document.getElementById("weather").innerHTML = "There are broken clouds outside ";
+                } else if (data.weather[0].description == "overcast clouds") {
                     document.getElementById("weather").innerHTML = "It's cloudly outside ";
                 
                 //Precipitation
-                } else if (data.weather.main == "Drizzle") {
+                } else if (data.weather[0].main == "Drizzle") {
                     document.getElementById("weather").innerHTML = "It's drizzling outside ";
-                } else if (data.weather.main == "Rain") {
+                } else if (data.weather[0].main == "Rain") {
                     document.getElementById("weather").innerHTML = "It's raining outside ";
-                } else if (data.weather.main == "Snow") {
+                } else if (data.weather[0].main == "Snow") {
                     document.getElementById("weather").innerHTML = "It's snowing outside ";
-                } else if (data.weather.main == "Thunderstorm") {
+                } else if (data.weather[0].main == "Thunderstorm") {
                     document.getElementById("weather").innerHTML = "There are thunderstorms ";
 
                 //Atmosphere
-                } else if (data.weather.main == "Mist") {
+                } else if (data.weather[0].main == "Mist") {
                     document.getElementById("weather").innerHTML = "It's misty outside ";
-                } else if (data.weather.main == "Fog") {
+                } else if (data.weather[0].main == "Fog") {
                     document.getElementById("weather").innerHTML = "It's foggy outside ";
-                } else if (data.weather.main == "Tornado") {
+                } else if (data.weather[0].main == "Tornado") {
                     document.getElementById("weather").innerHTML = "It's tornado weather! ";
-                } else if (data.weather.main == "Dust") {
+                } else if (data.weather[0].main == "Dust") {
                     document.getElementById("weather").innerHTML = "It's dusty outside! ";
                 } 
             }
